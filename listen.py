@@ -92,7 +92,7 @@ import subprocess
 # def 
 
 def on_interrupt():
-    raise ValueError('You pressed <ctrl>+<alt>+<cmd> which ended the application')
+    raise ValueError('You pressed <ctrl>+<alt>+<cmd>+b which ended the application')
 
 # To Maybe implement later ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 def newHotkey():
@@ -117,21 +117,22 @@ def callUserHotkey(commandString):
 
 
 hotkeys = {
-    '<ctrl>+<alt>+<cmd>+<esc>': on_interrupt,
+    '<ctrl>+<alt>+<cmd>+b': on_interrupt,
+    '<ctrl>+<alt>+<cmd>+r': loadHotkeys,
     # To Maybe implement later
     '<ctrl>+<alt>+<cmd>+<space>': newHotkey, 
     '<ctrl>+<alt>+<cmd>+l': listHotkeys,
-    '<ctrl>+<alt>+<cmd>+<backspace>': deleteHotkey,
+    # '<ctrl>+<alt>+<cmd>+<backspace>': deleteHotkey,
     '<ctrl>+<alt>+<cmd>+h': helpHotkey
 }
 
 def loadHotkeys():
     print("load hotkeys")
-    f = open("userHotkeys.json", "rt")
+    f = open("/Users/sh/DEV/macroni/userHotkeys.json", "rt")
     userHotkeysJSON = json.loads(f.read())
     for key, value in userHotkeysJSON.items():
         hotkeys[key] = lambda: callUserHotkey(value)
-    print(hotkeys)
+    # print(hotkeys)
     f.close()
 
 loadHotkeys()
