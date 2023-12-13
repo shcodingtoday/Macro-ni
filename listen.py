@@ -115,27 +115,67 @@ def callUserHotkey(commandString):
     commandArray = commandString.split(" ")
     subprocess.run(commandArray)
 
+# def openUserHotkeyJSON():
+#     # print("open user hotkey json")
+#     subprocess.run(["code", "/Users/sh/DEV/macroni/hotkeys.json"])
 
-hotkeys = {
-    '<ctrl>+<alt>+<cmd>+b': on_interrupt,
-    '<ctrl>+<alt>+<cmd>+r': loadHotkeys,
-    # To Maybe implement later
-    '<ctrl>+<alt>+<cmd>+<space>': newHotkey, 
-    '<ctrl>+<alt>+<cmd>+l': listHotkeys,
-    # '<ctrl>+<alt>+<cmd>+<backspace>': deleteHotkey,
-    '<ctrl>+<alt>+<cmd>+h': helpHotkey
-}
+
+# hotkeys = {
+#     # '<ctrl>+<alt>+<cmd>+b': on_interrupt,
+#     # '<ctrl>+<alt>+<cmd>+r': loadHotkeys,
+#     # '<ctrl>+<alt>+<cmd>+o': openUserHotkeyJSON,
+#     # To Maybe implement later
+#     '<ctrl>+<alt>+<cmd>+<space>': newHotkey, 
+#     '<ctrl>+<alt>+<cmd>+l': listHotkeys,
+#     # '<ctrl>+<alt>+<cmd>+<backspace>': deleteHotkey,
+#     '<ctrl>+<alt>+<cmd>+h': helpHotkey
+# }
 
 def loadHotkeys():
     print("load hotkeys")
-    f = open("/Users/sh/DEV/macroni/userHotkeys.json", "rt")
-    userHotkeysJSON = json.loads(f.read())
-    for key, value in userHotkeysJSON.items():
-        hotkeys[key] = lambda: callUserHotkey(value)
+    f = open("/Users/sh/DEV/macroni/hotkeys.json", "rt")
+    hotkey_string_commands = json.loads(f.read())
+    hotkeys = {}
+    for key, value in hotkey_string_commands.items():
+        print(key)
+        print(value)
+        # temp = hotkey_string_commands[key]
+        # hotkeys[key] = lambda: callUserHotkey(temp)
+        hotkeys[key] = lambda value=value: callUserHotkey(value)
     # print(hotkeys)
     f.close()
+    print(hotkeys)
+    return hotkeys
 
-loadHotkeys()
 
-with keyboard.GlobalHotKeys(hotkeys) as h:
-    h.join()
+
+# hhh = loadHotkeys()
+# hhh["<ctrl>+<alt>+p"]()
+# print(hhh)
+def addHotkeys(hotkeyDict):
+
+    with keyboard.GlobalHotKeys(
+    #     {
+    #     "<ctrl>+<alt>+p": lambda: callUserHotkey("python3 /Users/sh/DEV/password-generator/generate-password.py"),
+        
+    #     "<ctrl>+<alt>+<cmd>+o": lambda: callUserHotkey("python3 /Users/sh/DEV/macroni/scripts/reload.py")
+    # }
+    hotkeyDict
+    ) as h:
+        h.join()
+
+addHotkeys(loadHotkeys())
+# Attempting to initialise multiple global hotkeys with small dict to fix lamda dict issue
+# does not work, only the first executes
+def initHotkeys():
+    f = open("/Users/sh/DEV/macroni/hotkeys.json", "rt")
+    hotkey_string_commands = json.loads(f.read())
+    # hotkeys = {}
+    for key, value in hotkey_string_commands.items():
+
+        addHotkeys({key: lambda: callUserHotkey(hotkey_string_commands[key])})
+    # print(hotkeys)
+    f.close()
+    # print(hotkeys)
+    # return hotkeys
+# initHotkeys()
