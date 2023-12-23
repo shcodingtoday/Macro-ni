@@ -1,7 +1,6 @@
 # Macro-ni
 Macro-ni is an open source global hotkey script.  
-A specified key combination runs a terminal command.  
-It is flexible, use a hotkey to run any code in any language.  
+A specified key combination runs a terminal command.  Flexibility!
 
 # Exiting the program
 Use a keyboard interrupt in the terminal this is running in. (`<ctrl>+c` usually)
