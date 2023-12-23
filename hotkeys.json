@@ -1,8 +1,4 @@
 {
-    "<ctrl>+<alt>+p": "python3 /Users/sh/DEV/password-generator/generate-password.py",
-    "<ctrl>+<alt>+<cmd>+b": "python3 /Users/sh/DEV/macroni/scripts/exit.py --keys <ctrl>+<alt>+<cmd>+<esc>",
-    "<ctrl>+<alt>+<cmd>+r": "python3 /Users/sh/DEV/macroni/scripts/reload.py --keys <ctrl>+<alt>+<cmd>+r",
-    "<ctrl>+<alt>+<cmd>+o": "code /Users/sh/DEV/macroni/hotkeys.json"
-
-
+    "<ctrl>+<alt>+<shift>+o": "code /Users/sh/DEV/macroni/hotkeys.json",
+    "<ctrl>+<alt>+p": "python3 /Users/sh/DEV/password-generator/generate-password.py"
 }

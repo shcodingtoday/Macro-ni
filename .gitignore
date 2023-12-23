@@ -1,7 +1,4 @@
-build/*
 build
-dist/*
 dist
 listen.spec
 .DS_Store
-!.gitignore
