@@ -7,7 +7,7 @@ Use a keyboard interrupt in the terminal this is running in. (`<ctrl>+c` usually
 
 Examples:   
 `"<ctrl>+<shift>+h": "echo Hello World"`  
-`"g+l+o+w+i+e": "/Users/Terry/WeNeedToGTFOofHere.out"`
+`"g+l+o+w+i+e": "/Users/Terry/WeNeedToGTFOofHere.out"`  
 `"<space>": "python3 /Users/DrEvil/BigRedButton.py"`
 
 
