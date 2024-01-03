@@ -5,10 +5,7 @@ Benefits:
 Open source and understandable short amount of code so you know that no-one is listening to your key inputs.  
 Flexible: run any script in any language.
 
-# Exiting the program
-Keyboard interrupt **in the terminal**. (`<ctrl>+c` usually)
-
-## Create a hotkey
+# Create a hotkey
 1. Open up hotkeys.json
 2. Choose a key combo.
 <details>
@@ -153,6 +150,15 @@ Examples:
 `"<ctrl>+<shift>+h": "echo Hello World"`  
 `"g+l+o+w+i+e": "/Users/Terry/WeNeedToGTFOofHere.out"`  
 `"<space>": "python3 /Users/DrEvil/BigRedButton.py"`
+
+# Starting the program
+
+`python3 thePathToWhereYouSavedThisScript/listen.py`
+
+
+# Exiting the program
+
+Keyboard interrupt **in the terminal**. (`<ctrl>+c` usually)
 
 # Future additions to add
 1. macro to exit the program
