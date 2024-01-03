@@ -1,15 +1,12 @@
 # Macro-ni
 Macro-ni is an open source global hotkey script.  
-A specified key combination runs a terminal command.  Flexibility!
+
+Benefits:
+Open source and understandable short amount of code so you know that no-one is listening to your key inputs.
+Flexible: run any script in any language.
 
 # Exiting the program
-Use a keyboard interrupt in the terminal this is running in. (`<ctrl>+c` usually)
-
-Examples:   
-`"<ctrl>+<shift>+h": "echo Hello World"`  
-`"g+l+o+w+i+e": "/Users/Terry/WeNeedToGTFOofHere.out"`  
-`"<space>": "python3 /Users/DrEvil/BigRedButton.py"`
-
+Keyboard interrupt **in the terminal**. (`<ctrl>+c` usually)
 
 ## Create a hotkey
 1. Open up hotkeys.json
@@ -151,6 +148,11 @@ An up arrow key.
 </details>
 3. The value corresponding to the key press should be a terminal command.  
    This can be used to execute other scripts.
+
+Examples:   
+`"<ctrl>+<shift>+h": "echo Hello World"`  
+`"g+l+o+w+i+e": "/Users/Terry/WeNeedToGTFOofHere.out"`  
+`"<space>": "python3 /Users/DrEvil/BigRedButton.py"`
 
 # Future additions to add
 1. macro to exit the program
