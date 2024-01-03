@@ -1,8 +1,8 @@
 # Macro-ni
 Macro-ni is an open source global hotkey script.  
 
-Benefits:
-Open source and understandable short amount of code so you know that no-one is listening to your key inputs.
+Benefits:  
+Open source and understandable short amount of code so you know that no-one is listening to your key inputs.  
 Flexible: run any script in any language.
 
 # Exiting the program
